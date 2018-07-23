@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7" lang=""><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8" lang=""><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang=""><!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>Ladefutbol.com</title>
+
+    <meta name="author" content="Ladefutbol">
+
+    
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+    <link rel="canonical" href="http://yt8yt.github.io/">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    
+
+    
+
+    <script src="/js/modernizr-2.0.js"></script>
+
+    <script src="/js/jquery-1.9.1.js"></script>
+
+    
+    <script>window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));</script>
+
+    
+    <link rel="me" href="https://twitter.com/your_twitter">
+    
+
+
+
+    <script src="/js/octo.js"></script>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet"
+          type="text/css">
+
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
+          type="text/css">
+
+    
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            
+<header class="page-header" id="banner">   
+    <h1>Ladefutbol.com</h1>
+</header>
+        </div>
+        <div class="row">    
+            <div class="container-fluid">
+    <nav id="barra">    
+        <ul class="nav nav-pills">
+            
+                <li><a href="/">Blog</a></li>
+            
+                <li><a href="/archives">Historial</a></li>
+            
+        </ul>
+    </nav>
+</div>    
+        </div>    
+        <div id="main">
+            <div id="content">
+                <div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            
+            
+                <article>
+                    <header>
+                        <h1 class="entry-title">
+                            <a href="/2018/07/22/hello-world/">Hello World</a>
+                        </h1>
+                        <p class="meta">
+                            <time datetime="2018-07-23T01:12:00.164Z" data-updated="true">Sun Jul 22 2018</time>
+                        </p>
+                    </header>
+                    <div class="entry-content"></div>
+                    <footer>
+                        <button type="button" class="btn btn-success " aria-expanded="false"><a rel="full-article" id="leer" href="/2018/07/22/hello-world/"><span id="leer"> Leer mas</span> <span class="glyphicon glyphicon-ok ok" aria-hidden="true"></span></a></button>
+                    </footer>
+                </article>
+                
+                <div class="pagination">
+    <a href="/">Historial Posts</a>
+    <span class="page-number current">1</span>
+</div>
+
+            
+        </div>
+        <div class="col-md-4">
+        <aside class="sidebar">
+    <section class="odd">
+    <h1>Ultimos Posts</h1>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/22/hello-world/">Hello World</a></li></ul>
+</section><section class="even">
+    <h1>GitHub</h1>
+    <ul id="gh_repos">
+        <li class="loading">Status updating&#8230;</li>
+    </ul>
+
+    <a href="https://github.com/doctamayot">@doctamayot</a> en GitHub
+
+    <script>
+        $(document).ready(function(){
+            const options = {
+                user: 'doctamayot',
+                count: 0,
+                skip_forks: true,
+                target: '#gh_repos'
+            }
+
+            function escapeHtml(str) {
+                return $('<div/>').text(str).html();
+            }
+
+            function render(target, repos){
+                let i, fragment = '', t = $(target)[0];
+
+                for(i = 0; i < repos.length; i++) {
+                    fragment += '<li><a href="'+repos[i].html_url+'">'+repos[i].name+'</a><p>'+escapeHtml(repos[i].description||'')+'</p></li>';
+                }
+                t.innerHTML = fragment;
+            }
+
+            $.ajax({
+                url: "https://api.github.com/users/"+options.user+"/repos?sort=pushed&callback=?",
+                dataType: 'jsonp',
+                error: function (err) {
+                    $(options.target + ' li.loading').addClass('error').text("Error loading feed");
+                },
+                success: function(data) {
+                    var repos = [];
+                    if (!data || !data.data) { return; }
+                    for (var i = 0; i < data.data.length; i++) {
+                        if (options.skip_forks && data.data[i].fork) { continue; }
+                        repos.push(data.data[i]);
+                    }
+                    if (options.count) { repos.splice(options.count); }
+                    render(options.target, repos);
+                }
+            });
+        });
+    </script>
+</section>
+</aside>
+        </div>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+        <div class="row">
+        <footer class="footer">
+            <p>
+                Copyright © 2018 - Ladefutbol 
+                
+            </p>
+        </footer>
+        </div>
+
+        
+    </div>             
+</body>
+</html>
