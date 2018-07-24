@@ -109,14 +109,14 @@ function renderDeliciousLinks(items) {
     $('#delicious').html(output);
 }
 
-$('document').ready(function() {
+/*$('document').ready(function() {
     testFeatures();
     wrapFlashVideos();
     flashVideoFallback();
     addCodeLineNumbers();
     getNav();
     addSidebarToggler();
-});
+});*/
 
 // iOS scaling bug fix
 // Rewritten version
